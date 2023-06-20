@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados do BI</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/jquery.js"></script>
+</head>
+<style>
+    
+html{
+  overflow-y: scroll!important;
+}
+</style>
+<body class="bg-light">
+    
+    <div class="container bg-light">
+        <br>
+        <center><h2 class="text-dark">Insira o seu número do Bilhete de identidade</h2></center>
+        <br>
+        <input type="text" id="nif" placeholder="Nº do BI" class="form-control">
+        <br>
+        <label for="">Primeiro Nome</label>
+        <input type="text" id="nome" class="form-control">
+        <br>
+        <label for="">Último nome</label>
+        <input type="text" id="sobrenome" class="form-control">
+        <br>
+        <label for="">Género/ sexo</label>
+        <input type="text" id="genero" class="form-control">
+        <br>
+        <label for="">Data de nascimento</label>
+        <input type="text" id="aniversario" class="form-control">
+        <br>
+        <label for="">Pai</label>
+        <input type="text" id="pai" class="form-control">
+        <br>
+        <label for="">Mãe</label>
+        <input type="text" id="mae" class="form-control">
+        <br>
+        <label for="">Província</label>
+        <input type="text" id="provincia" class="form-control">
+        <br>
+        <label for="">Município</label>
+        <input type="text" id="mun" class="form-control">
+        <br>
+        <label for="">Bairro</label>
+        <input type="text" id="bairro" class="form-control">
+        <br>
+        <label for="">Endereço</label>
+        <input type="text" id="endereco" class="form-control">
+        <br>
+        <label for="">Estado civil</label>
+        <input type="text" id="estado" class="form-control">
+        <br>
+    </div>
+    <script>
+        $("#nif").focusout(function () {
+            $.ajax({
+               url: 'https://api.gov.ao/consultarBI/v2/?bi='+$(this).val(),
+               dataType: 'json',
+               success: function (resposta) {
+                 $("#nome").val(resposta[0].FIRST_NAME);
+                 $("#sobrenome").val(resposta[0].LAST_NAME);
+                 $("#genero").val(resposta[0].GENDER_NAME);
+                 $("#aniversario").val(resposta[0].BIRTH_DATE);
+                 $("#pai").val(resposta[0].FATHER_FIRST_NAME + ' ' + resposta[0].FATHER_LAST_NAME);
+                 $("#mae").val(resposta[0].MOTHER_FIRST_NAME + ' ' + resposta[0].MOTHER_LAST_NAME);
+                 $("#provincia").val(resposta[0].RESIDENCE_PROVINCE_NAME);
+                 $("#mun").val(resposta[0].RESIDENCE_MUNICIPALITY_NAME);
+                 $("#bairro").val(resposta[0].RESIDENCE_NEIGHBOR);
+                 $("#endereco").val(resposta[0].RESIDENCE_ADDRESS);
+                 $("#estado").val(resposta[0].MARITAL_STATUS_NAME);
+               } 
+            });
+        });
+    </script>
+</body>
+</html>
