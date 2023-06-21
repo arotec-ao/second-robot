@@ -14,7 +14,6 @@ function falar(texto) {
 var interval = null; // Variável para armazenar a referência do setInterval
 
 
-
 function falarB(texto) {
 $(".boca").addClass('animb');
 speech.text = texto;
