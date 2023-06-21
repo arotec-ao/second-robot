@@ -18,6 +18,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 
+<style>
+    ol li {
+        font-size: 28px;
+    }
+
+    .regras h2 {
+        font-size: 38px;
+        text-decoration: underline;
+    }
+</style>
 
 <body class="bg-dark">
 
@@ -33,8 +43,13 @@
             </div>
             <div>
             </div>
-            <button onClick="mostrarRegras()" class="btn aceitar ">Aceitar Desafio</button><br />
 
+            <div style="position: fixed; bottom: 4.5rem; left: 0; right: 0" class="d-flex justify-content-center text-center gap-3">
+                <button onClick="mostrarRegras()" class="btn bg-white border-white rounded-0 text- ">SIM</button><br />
+                <a href="/" class="btn text-white border-white rounded-0 nn ms-2">Nao</a><br />
+    
+            </div>
+           
             <center class='w-100 logo'>
                 <img src="" alt="" class='' />
             </center>
@@ -51,7 +66,7 @@
 
     <div id="rules-section" class="p1 mt-5" style="display: none;">
       
-            <div class=" text-white text-start regras">
+            <div class=" text-white container text-start regras">
                <center>
                 <h2>Regras do jogo</h2>
                </center>
@@ -63,8 +78,13 @@
                 </ol>
             </div>
             <center>
-                <button onClick="aceitarRegras()" class="btn aceitar btn-white">Aceito as regras</button><br />
-            </center>
+
+            <div style="position: fixed; bottom: 4.5rem; left: 0; right: 0" class="d-flex justify-content-center text-center gap-3">
+                <button onClick="aceitarRegras()" class="btn bg-white border-white rounded-0 text- ">Aceito <i class="bi bi-check2"></i></button><br />
+                <a href="/" class="btn text-white border-white rounded-0 nn ms-2">Nao</a><br />
+    
+            </div>
+        </center>
             
         
     </div>
@@ -95,142 +115,7 @@
     </div>
 
     <script>
-        // Array de perguntas e respostas
-        const questions = [
-            {
-                question: "      Em que ano foi surgiu o primeiro computador eletrónico?",
-                options: [1975, 1546, 1946, "Nenhuma das anteriores"],
-                answer: 2
-            },
-            {
-                question: "     Qual é o maior país do mundo em área territorial?",
-                options: ["Guiné", "Rússia", "China", "Estados Unidos"],
-                answer: 1
-            },
-            {
-                question: "      Qual destes cientistas criou o telefone?",
-                options: ["Albert Einstein", "Isaac Newton", "Henry Ford", "Alexander Graham Bell", "Elisha Grey"],
-                answer: 3
-            },
-            {
-                question: "Qual é o elemento químico mais abundante no universo?",
-                options: ["Enxofre", "Hidrogênio", "Oxigênio", "Carbono"],
-                answer: 1
-            },
-            {
-                question: "Em que ano foi a 1ª edição do AiS?",
-                options: [2018, 2019, 2020, 2021, 2022],
-                answer: 3
-            },
-           
-        ];
-
-        let currentQuestion = 0; // Índice da pergunta atual
-
-        function mostrarRegras() {
-            document.getElementsByClassName("p1")[0].style.display = "none";
-            document.getElementById("rules-section").style.display = "block";
-      
-            falar(`Vamos as regras do jogo.
-                Regra número 1. Não Vale Batota.
-                Regra número 2. Não pode pesquisar a resposta na internet.
-                Regra número 3. Se acertar todas as perguntas você vence o jogo.
-                Se errar uma pergunta, você perde o jogo
-                Aceita o Desafio ?.?.?.?.? 
-                Se sim, clique no botão abaixo!.
-            `);
-            clearInterval(interval);
-        }
-
-        function aceitarRegras() {
-            document.getElementById("rules-section").style.display = "none";
-            document.getElementById("game-section").style.display = "block";
-            mostrarPergunta();
-        }
-
-        function mostrarPergunta() {
-            if (currentQuestion < questions.length) {
-                const question = questions[currentQuestion];
-                const questionSection = document.getElementById("game-section");
-                questionSection.innerHTML = `
-                    <h2 class='text-center'>${question.question}</h2>
-                    <div class="answer-section">
-                        ${question.options.map((option, index) => `
-                            <button onClick="verificarResposta(${index})" class="option-btn">${option}</button>
-                        `).join("")}
-                    </div>
-                `;
-                falar(question.question);
-            } else {
-                exibirVitoria();
-            }
-        }
-
-
-        function verificarResposta(selectedOption) {
-            const question = questions[currentQuestion];
-            const selectedBtn = document.getElementsByClassName("option-btn")[selectedOption];
-
-            if (selectedOption === question.answer) {
-                // Resposta correta
-                selectedBtn.style.backgroundColor = "green";
-                selectedBtn.style.borderColor = "green";
-                falar("Boa, resposta certa!")
-                currentQuestion++;
-                setTimeout(() => {
-                    mostrarPergunta();
-                }, 3000);
-            } else {
-                // Resposta incorreta
-                selectedBtn.style.backgroundColor = "red";
-                selectedBtn.style.borderColor = "red";
-                falar('Ôpah!! Resposta errada!')
-                setTimeout(() => {
-                    falar(`Fim de jogo!
-                       Oh, que pena. Você foi derrotado por uma máquina.
-                        ...
-                    Até breve!
-                    `)
-                    exibirFimDeJogo();
-                }, 3000);
-            }
-        }
-
-        function exibirFimDeJogo() {
-            const endSection = document.getElementById("end-section");
-            endSection.innerHTML = `
-            <center class='text-white'>
-                <h2>Fim de Jogo!</h2>
-                <p>Você errou uma pergunta.</p>
-            </center>
-            `;
-            document.getElementById("game-section").style.display = "none";
-            document.getElementById("end-section").style.display = "block";
-            document.getElementById("restart-section").style.display = "block";
-        }
-
-        function exibirVitoria() {
-            const victorySection = document.getElementById("victory-section");
-            victorySection.innerHTML = `
-            <center class='text-white'>
-                <h2>Parabéns!</h2>
-                <p>Você é uma verdadeira máquina. <br> Bom evento!</p>
-            </center>
-            `;
-            falar(`Parabéns!, Você é uma verdadeira máquina.  Bom evento!`)
-            document.getElementById("game-section").style.display = "none";
-            document.getElementById("victory-section").style.display = "block";
-            document.getElementById("restart-section").style.display = "block";
-        }
-
-        function reiniciarJogo() {
-            currentQuestion = 0;
-            document.getElementById("end-section").style.display = "none";
-            document.getElementById("victory-section").style.display = "none";
-            document.getElementById("restart-section").style.display = "none";
-            document.getElementById("game-section").style.display = "block";
-            mostrarPergunta();
-        }
+   
     </script>
 </body>
 </html>
