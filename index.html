@@ -56,9 +56,10 @@
                 <h2>Regras do jogo</h2>
                </center>
                 <ol class="text-start">
-                    <li> Se errar uma pergunta, o jogo termina.</li>
-                    <li> Se acertar todas, você vence o jogo e ganha o prêmio.</li>
-                <li>se acertar todas as perguntas ganha um prémio 100$</li>
+                    <li> Não Vale Batota.</li>
+                    <li> Não pode pesquisar a resposta na Internet .</li>
+                    <li> Se acertar todas, você vence o jogo.</li>
+                <li>se errar uma pergunta o jogo termina</li>
                 </ol>
             </div>
             <center>
@@ -79,11 +80,11 @@
     <div id="victory-section" class="p1 mt-5 py-5 container" style="display: none;">
         <!-- Conteúdo de vitória -->
     </div>
-    <div class="prize text-center" style="display: none;" id="prize">
+    <!-- <div class="prize text-center" style="display: none;" id="prize">
         <h4 class="text-white">Escaneie o código QR para obter sua recompensa!</h4>
         <img src="./img/1.png" class="w-50" alt="">
         <br>
-    </div>
+    </div> -->
 
     <div id="restart-section" class="p1" style="display: none;">
         <!-- Botão de reiniciar -->
@@ -97,9 +98,9 @@
         // Array de perguntas e respostas
         const questions = [
             {
-                question: "      Qual é a capital de Angola?",
-                options: ["Luanda", "Rio de Janeiro", "São Paulo", "Salvador"],
-                answer: 0
+                question: "      Em que ano foi surgiu o primeiro computador eletrónico?",
+                options: [1975, 1546, 1946, "Nenhuma das anteriores"],
+                answer: 2
             },
             {
                 question: "     Qual é o maior país do mundo em área territorial?",
@@ -107,8 +108,8 @@
                 answer: 1
             },
             {
-                question: "     Quem pintou a obra 'Mwana Pó'?",
-                options: ["Leonardo da Vinci", "Pablo Picasso", "Vincent van Gogh", "Angolano Incognito"],
+                question: "      Qual destes cientistas criou o telefone?",
+                options: ["Albert Einstein", "Isaac Newton", "Henry Ford", "Alexander Graham Bell", "Elisha Grey"],
                 answer: 3
             },
             {
@@ -117,16 +118,11 @@
                 answer: 1
             },
             {
-                question: "Quem foi o primeiro presidente de Angola ?",
-                options: ["José Eduardo dos Santos", "Jonas Savimbi", "Ordero Roberto", "Antonio Agostinho Neto"],
+                question: "Em que ano foi a 1ª edição do AiS?",
+                options: [2018, 2019, 2020, 2021, 2022],
                 answer: 3
             },
-            {
-                question:"Quem foi Mellow",
-
-        options: ["Jogador", "Taxista", "Estudante", "Trabalhador"],
-           answer:2
-    }
+           
         ];
 
         let currentQuestion = 0; // Índice da pergunta atual
@@ -136,10 +132,11 @@
             document.getElementById("rules-section").style.display = "block";
       
             falar(`Vamos as regras do jogo.
-                Regra número 1. Se errar uma pergunta o jogo termina.
-                Regra número 2. Se acertar todas as perguntas você vence o jogo.
-                Regra número 3. Se acertar todas as perguntas você gánha um prémio de 100 dólares.
-                Aceita as regras ?.?.?.?.? 
+                Regra número 1. Não Vale Batota.
+                Regra número 2. Não pode pesquisar a resposta na internet.
+                Regra número 3. Se acertar todas as perguntas você vence o jogo.
+                Se errar uma pergunta, você perde o jogo
+                Aceita o Desafio ?.?.?.?.? 
                 Se sim, clique no botão abaixo!.
             `);
             clearInterval(interval);
@@ -187,12 +184,12 @@
                 // Resposta incorreta
                 selectedBtn.style.backgroundColor = "red";
                 selectedBtn.style.borderColor = "red";
-                falar('Ôoooo!! Resposta errada!')
+                falar('Ôpah!! Resposta errada!')
                 setTimeout(() => {
                     falar(`Fim de jogo!
-                        você errou uma pergunta e foi contra as regras do jogo, se quiser recomeçar o jogo pode clicar no botão abaixo.
+                       Oh, que pena. Você foi derrotado por uma máquina.
                         ...
-                        Espero vê-lo em breve!
+                    Até breve!
                     `)
                     exibirFimDeJogo();
                 }, 3000);
@@ -217,15 +214,13 @@
             victorySection.innerHTML = `
             <center class='text-white'>
                 <h2>Parabéns!</h2>
-                <p>Você acertou todas as perguntas. <br> Você ganhou um premio!</p>
+                <p>Você é uma verdadeira máquina. <br> Bom evento!</p>
             </center>
             `;
-            falar(`Uhaaaa, você venceu o jogo. você é muito Bom mesmo. 
-            Escaneieo código Q R para obter a sua Recompensa.`)
+            falar(`Parabéns!, Você é uma verdadeira máquina.  Bom evento!`)
             document.getElementById("game-section").style.display = "none";
             document.getElementById("victory-section").style.display = "block";
             document.getElementById("restart-section").style.display = "block";
-            document.getElementById("prize").style.display = "block";
         }
 
         function reiniciarJogo() {
