@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Robot | AROTEC</title>
+    <script src="js/jquery.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/bootstrap.js"></script>
+    <link rel="manifest" href="./manifest1.json">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<style>
+    body {
+        font-family: 'Roboto', sans-serif;
+        background: white;
+    }
+
+    .cabeca {
+        margin-top: 25vh;
+    }
+
+    .icone {
+        position: absolute;
+        bottom: 1rem;
+        left: 0;
+        right: 0;
+    }
+
+    .boca {
+        margin-top: 3rem;
+        width: 19em;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    @keyframes so {
+        0% {
+            height: .5em;
+        }
+
+        10% {
+            height: 8em;
+        }
+
+        20% {
+            height: 10em;
+        }
+
+        30% {
+            height: 10em;
+        }
+
+        33% {
+            height: 10em;
+        }
+
+        38% {
+            height: 10em;
+        }
+
+        40% {
+            height: .5em;
+        }
+
+        50% {
+            height: 5em;
+        }
+
+        60% {
+            height: 6em;
+        }
+
+        70% {
+            height: 3em;
+        }
+
+        80% {
+            height: 10em;
+        }
+
+        90% {
+            height: 10em;
+        }
+
+        100% {
+            height: .5em;
+        }
+
+    }
+
+    .cara {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 3rem;
+    }
+
+    .o {
+        height: 10em;
+        width: 10em;
+        border-radius: 90px;
+        background: rgb(0, 0, 0);
+        animation: 5s so linear infinite;
+    }
+</style>
+
+<body class=" container">
+
+    <div class="cabeca container" style="display: block;">
+        <div class="cara">
+            <div class="o oe"></div>
+            <div class="o od"></div>
+        </div>
+        <div class="text-center position-relative ">
+            <br>
+            <img src="./bb.png" class="boca" alt="">
+        </div>
+    </div>
+
+
+    <div class="qrcode" style="display: none;">
+        <br>
+        <br>
+
+      <center>
+        <h1 style="font-size: 70px; font-weight: light">Consulte aqui o <b style="font-weight: bolder;">Programa</b></h1>
+      </center>
+        <img src="./qrcode.png" class="w-100" slt="">
+        <br>
+        <center>
+            <h1 style="font-weight: bolder;">SCAN ME</h1>
+        </center>
+    </div>
+
+
+
+
+    <!-- Imagem do logo da arotec -->
+    <center class="text-center icone">
+
+        <img src="./icone.png" style="height: 2em" alt="">
+    </center>
+
+
+    <script src="./bot.js"></script>
+    
+</body>
+
+</html>
