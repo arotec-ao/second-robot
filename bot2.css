@@ -13,7 +13,7 @@ code {
 }
 
 .bg-dark {
-    background: #00001f !important;
+    background: #fff !important;
 }
 
 .h-100 {
@@ -48,27 +48,27 @@ body {
 .o {
     height: 8em;
     width: 6em;
-    background: white;
+    background: #00001f;
     border-radius: 50px;
     border: 1px solid #04003567;
     animation: 4s olho linear infinite;
 }
-
+/* 
 .oe {
 
-    box-shadow: -5px 9px 14px white;
+    box-shadow: -5px 9px 14px #00001f;
 
 }
 
 .od {
 
-    box-shadow: 5px 9px 14px white;
+    box-shadow: 5px 9px 14px #00001f;
 
-}
+} */
 
 .boca {
     height: 1em;
-    background: white;
+    background: #00001f;
     width: 24vw;
     margin-top: 20vh;
     border-bottom-left-radius: 100px;
@@ -90,7 +90,7 @@ body {
 .o-p {
     height: 2em;
     width: 2em;
-    background: white;
+    background: #00001f;
     /* border-radius: 50px; */
     border: 1px solid #04003567;
     /* animation: 4s olho linear infinite; */
@@ -98,19 +98,19 @@ body {
 
 .oe-p {
 
-    box-shadow: -5px 9px 14px white;
+    box-shadow: -5px 9px 14px #00001f;
 
 }
 
 .od-p {
 
-    box-shadow: 5px 9px 14px white;
+    box-shadow: 5px 9px 14px #00001f;
 
 }
 
 .boca-p {
     height: 1em;
-    background: white;
+    background: #00001f;
     width: 8vw;
     margin-top: 5vh;
     border-bottom-left-radius: 100px;
@@ -171,7 +171,7 @@ body {
     border-bottom-left-radius: 30%;
     border-bottom-right-radius: 30%;
     border-top-left-radius: 100%;
-    background: white;
+    background: #00001f;
     /* border-radius: 50px; */
     border: 1px solid #04003567;
     /* animation: 4s olho linear infinite; */
@@ -179,19 +179,19 @@ body {
 
 .oe-pp {
 
-    box-shadow: -5px 9px 14px white;
+    box-shadow: -5px 9px 14px #00001f;
 
 }
 
 .od-pp {
 
-    box-shadow: 5px 9px 14px white;
+    box-shadow: 5px 9px 14px #00001f;
 
 }
 
 .boca-pp {
     height: 10vh;
-    background: white;
+    background: #00001f;
     width: 12vw;
     margin-bottom: 4rem;
     /* clip-path: polygon(0 0, 100% 0, 50% 50%); */
@@ -239,7 +239,7 @@ body {
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
     border-top-left-radius: 100px;
-    background: white;
+    background: #00001f;
     /* border-radius: 50px; */
     border: 1px solid #04003567;
     /* animation: 4s olho linear infinite; */
@@ -247,19 +247,19 @@ body {
 
 .oe-pv {
 
-    box-shadow: -5px 9px 14px white;
+    box-shadow: -5px 9px 14px #00001f;
 
 }
 
 .od-pv {
 
-    box-shadow: 5px 9px 14px white;
+    box-shadow: 5px 9px 14px #00001f;
 
 }
 
 .boca-pv {
     height: 14vh;
-    background: white;
+    background: #00001f;
     width: 12vw;
     margin-bottom: 1.5rem;
     /* clip-path: polygon(0 0, 100% 0, 50% 50%); */
@@ -276,7 +276,7 @@ body {
 
 
 .aceitar {
-    background: white;
+    background: #00001f;
     position: absolute;
     bottom: 8rem;
     font-size: 30px;
@@ -287,9 +287,9 @@ body {
 
 
 .aceitar:hover {
-    color: white;
+    color: #00001f;
     background: none;
-    border: 1px solid white;
+    border: 1px solid #00001f;
 }
 
 .answer-section {
@@ -302,7 +302,7 @@ body {
 
 .option-btn {
     outline: none;
-    box-shadow: 3px 4px 1px #f4f4ff;
+    box-shadow: 3px 4px 1px #363636;
     border-radius: 0!important;
 }
 
@@ -318,12 +318,12 @@ body {
     display: flex;
     gap: 10px;
     background: transparent;
-    color: white;
+    color: #00001f;
     font-weight: 600;
     font-size: 25px;
-    border: .5px solid white;
+    border: .5px solid #00001f;
     border-radius: 2px;
-    box-shadow: 4px 2px 9px solid white;
+    box-shadow: 4px 2px 9px solid #00001f;
 }
 
 
@@ -447,6 +447,6 @@ body {
 
 
 .aceitar:hover {
-    color: white;
-    border: 1px solid white;
+    color: #00001f;
+    border: 1px solid #00001f;
 }

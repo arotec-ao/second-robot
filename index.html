@@ -28,6 +28,10 @@
         text-decoration: underline;
     }
 
+    .b-d {
+        background: #000!important;
+    }
+
     .h-1 {
         font-size: 30px;
     }
@@ -49,8 +53,8 @@
             </div>
 
             <div style="position: fixed; bottom: 4.5rem; left: 0; right: 0" class="d-flex justify-content-center text-center gap-3">
-                <button onClick="mostrarRegras()" class="btn py-2 px-5 h-1  bg-white border-white rounded-0 text- ">SIM</button><br />
-                <a href="/" class="btn py-2 px-5 h-1  text-white border-white rounded-0 nn ms-2">NÃO</a><br />
+                <button onClick="mostrarRegras()" class="btn py-2 px-5 h-1  bg border-dark rounded-0 text-white " style="background: #000;">SIM </button><br />
+                <a href="/" class="btn py-2 px-5 h-1  text-dark border-dark rounded-0 nn ms-2">NÃO</a><br />
     
             </div>
            
@@ -62,7 +66,7 @@
     </div>
 
     <center class='w-100 logo'>
-        <img src="./img/logo.png" alt="" className='' />
+        <img src="./icone.png" alt="" className='' />
     </center>
 
 
@@ -70,7 +74,7 @@
 
     <div id="rules-section" class="p1 mt-5" style="display: none;">
       
-            <div class=" text-white container text-start regras">
+            <div class=" text-dark container text-start regras">
                <center>
                 <h2>Regras do jogo</h2>
                </center>
@@ -84,8 +88,8 @@
             <center>
 
             <div style="position: fixed; bottom: 4.5rem; left: 0; right: 0" class="d-flex justify-content-center text-center gap-3">
-                <button onClick="aceitarRegras()" class="btn  py-2 px-5 h-1 bg-white border-white rounded-0 text- ">Aceito <i class="bi bi-check2"></i></button><br />
-                <a href="/" class="btn  py-2 px-5 h-1 text-white border-white rounded-0 nn ms-2">Nao</a><br />
+                <button onClick="aceitarRegras()" class="btn  py-2 px-5 h-1 bg- b-d border-dark rounded-0 text-white " style="background: #000;">Aceito <i class="bi bi-check2"></i></button><br />
+                <a href="/" class="btn  py-2 px-5 h-1 text-dark border-dark rounded-0 nn ms-2">Nao</a><br />
     
             </div>
         </center>
@@ -93,7 +97,7 @@
         
     </div>
 
-    <div id="game-section" class="p1 container text-white mt-5 py-5" style="display: none;">
+    <div id="game-section" class="p1 container text-dark mt-5 py-5" style="display: none;">
         <!-- Conteúdo do jogo -->
     </div>
 
@@ -105,7 +109,7 @@
         <!-- Conteúdo de vitória -->
     </div>
     <!-- <div class="prize text-center" style="display: none;" id="prize">
-        <h4 class="text-white">Escaneie o código QR para obter sua recompensa!</h4>
+        <h4 class="text-dark">Escaneie o código QR para obter sua recompensa!</h4>
         <img src="./img/1.png" class="w-50" alt="">
         <br>
     </div> -->
@@ -114,7 +118,7 @@
         <!-- Botão de reiniciar -->
         <center>
             
-            <button onClick="reiniciarJogo()" class="btn text-white border-white reiniciar ">Reiniciar Jogo</button>
+            <button onClick="reiniciarJogo()" class="btn text-dark border-dark reiniciar ">Reiniciar Jogo</button>
         </center>
     </div>
 
